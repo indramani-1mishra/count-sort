@@ -1,0 +1,47 @@
+Counting Occurrences:
+
+In the first loop, we iterate through the input array of size 
+𝑛
+n to count the occurrences of each integer. This takes 𝑂
+(𝑛)
+O(n) time.
+Cumulative Count:
+
+In the second loop, we iterate through the count array, which has a size of 
+𝑘+1
+k+1 (where 
+𝑘
+k is the maximum value in the input). This takes 𝑂(𝑘)
+O(k) time.
+Building the Output Array:
+
+In the third loop, we iterate through the input array again (from the last element to the first) to build the output array. This again takes 
+𝑂(𝑛)
+O(n) time.
+Copying Back to Original Array:
+
+Finally, copying the sorted values back to the original array also takes 
+𝑂(𝑛)
+O(n) time.
+Overall Time Complexity
+The overall time complexity of Counting Sort is:
+
+𝑂(𝑛+𝑘)
+O(n+k)
+where:
+
+𝑛
+n is the number of elements in the input array.
+𝑘
+k is the range of the input values (from 0 to max).
+Space Complexity
+The space complexity of Counting Sort is:
+
+𝑂(𝑘)
+O(k) for the count array.
+𝑂(𝑛)
+O(n) for the output array.
+So, the overall space complexity is:
+
+𝑂(𝑛+𝑘)
+O(n+k)
