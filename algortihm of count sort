@@ -1,0 +1,26 @@
+Counting Sort Algorithm
+Input: An array of integers arr[], its size n, and the maximum value max in the array.
+
+Find Maximum:
+
+Initialize max with the first element of the array.
+Iterate through the array to find the maximum element.
+Count Array Initialization:
+
+Create a count array of size max + 1 initialized to zero. This will store the count of each integer in the input array.
+Create an output array of the same size as the input array to store the sorted elements.
+Count Elements:
+
+Iterate through the input array and for each element arr[i], increment count[arr[i]] by 1. This step counts how many times each integer appears in the array.
+Cumulative Count:
+
+Modify the count array such that each element at index i contains the sum of previous counts. This means that count[i] will hold the position of the integer i in the sorted output array.
+Build Output Array:
+
+Iterate through the input array from the last element to the first. For each element arr[i], place it in its correct position in the output array using count[arr[i]] - 1.
+Decrease the count for that element after placing it in the output array.
+Copy to Original Array:
+
+Copy the sorted values from the output array back to the original array arr[].
+Output: The original array arr[] is now sorted in non-decreasing order.
+
