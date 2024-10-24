@@ -1,0 +1,75 @@
+
+public class Main
+{
+	public static void main(String[] args) {
+	
+		
+		int arr[]={3,5,2,1,7,3,0,0,2}; // intialize the arraye 
+		int n=arr.length;   // to find the size of the arr
+	   int 	max=GetMaxElement(arr);// call the function  to find max element of the arrye 
+ 		
+       System.out.println("without sorting the arrye ");
+        for(int num:arr)     // for each loop
+          {
+             System.out.print(num+" ");
+       }
+       System.out.println(); // this statement is use to line do line brake
+
+		CountSort(arr,n, max); // call the function count sort 
+		System.out.println(" after sorting the arrye ");
+		for(int num:arr)
+		{
+		    System.out.print(num+" ");
+		}
+		
+			}
+			// function to max element of the arrye 
+			public static int GetMaxElement(int[]arr)
+			{
+			    int max=arr[0];  //   assign value of the arr[0] into the max varrible
+			   int n=arr.length;  // size of the arr 
+			   for(int i=0;i<n;i++)
+			   {
+			       if(arr[i]>max)
+			       {
+			           max=arr[i];         // max element store in max varrible
+			       }
+			   }
+			   return max;    // return the max element 
+			}
+			// function to do sorting 
+	public static void CountSort(int[]arr,int n,int max)
+	{
+	    int k=max; //asign the max value of the k name varriale 
+	    int []count=new int[k+1]; // intialize an count arraye who size if k+1 means this arrye index is max element of first arrye
+	    int []secondarr=new int[n];// intialize secondarraye do collect` element
+	    
+	    for(int i=0;i<n;i++)
+	    {
+	        count[arr[i]]++;     // in the count arrey count element 
+	    }
+	    for(int i=1;i<=k;i++)
+	    {
+	        count[i]=count[i]+count[i-1];     // Change count[i] so that it contains the actual position of this number in output[]
+	    }
+	    for(int i=n-1;i>=0;i--)
+	    {
+	        //secondarr[count[i-1]];
+	        //count[i]--;
+	        secondarr[count[arr[i]] - 1] = arr[i]; // // Decrease count for the number
+        count[arr[i]]--;                 
+	        
+	    }
+	    for(int i=0;i<n;i++)
+	    {
+	        arr[i]=secondarr[i]; // copy the second arrye into first arrye 
+	    }
+	    
+	}
+}
+
+
+
+
+
+
